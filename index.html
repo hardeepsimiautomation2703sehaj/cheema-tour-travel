@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cheema Tour Travel | Safe Journey • Happy Journey</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #12345b;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background: #073a78;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #ffd21c;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #ffd21c;
+}
+
+.quote-btn {
+    background: #ffd21c;
+    color: #073a78 !important;
+    padding: 11px 18px;
+    border-radius: 7px;
+}
+
+/* ================= POSTER ================= */
+
+.poster-section {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.poster {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 70px);
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center top;
+    margin: 0;
+}
+
+/* ================= GENERAL ================= */
+
+section {
+    padding: 75px 6%;
+    scroll-margin-top: 70px;
+}
+
+.section-title {
+    text-align: center;
+    color: #073a78;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+    background: #f5f9ff;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #073a78;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ================= PACKAGES ================= */
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.package-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.package-image {
+    height: 180px;
+    background: linear-gradient(135deg, #073a78, #1b75bc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.package-info {
+    padding: 20px;
+}
+
+.package-info h3 {
+    color: #073a78;
+    margin-bottom: 8px;
+}
+
+.package-info p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ================= FLEET ================= */
+
+.fleet {
+    background: #f5f9ff;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.car-card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.car-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.car-card h3 {
+    color: #073a78;
+    margin-bottom: 7px;
+}
+
+.car-card p {
+    color: #666;
+}
+
+/* ================= OFFERS ================= */
+
+.offers {
+    background: #073a78;
+    color: white;
+    text-align: center;
+}
+
+.offers .section-title {
+    color: white;
+}
+
+.offer-box {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    color: #073a78;
+    padding: 35px;
+    border-radius: 18px;
+}
+
+.offer-box h3 {
+    font-size: 30px;
+    color: #e5a900;
+    margin-bottom: 12px;
+}
+
+.offer-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    background: #ffffff;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 850px;
+    margin: auto;
+    background: #f5f9ff;
+    padding: 40px;
+    border-radius: 18px;
+}
+
+.contact-box h3 {
+    color: #073a78;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.contact-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.call-btn {
+    background: #073a78;
+    color: white;
+}
+
+.whatsapp-btn {
+    background: #20b95c;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #052c5c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .service-grid,
+    .package-grid,
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: auto;
+        padding: 12px 4%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .poster-section {
+        min-height: auto;
+    }
+
+    .poster {
+        width: 100%;
+        height: auto;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .service-grid,
+    .package-grid,
+    .fleet-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.poster-section {
+    padding-top: 20px !important;
+    align-items: flex-start !important;
+}
+
+.poster {
+    margin-top: 0 !important;
+}
+/* ================= MOBILE RESPONSIVE FIX ================= */
+@media (max-width: 600px) {
+
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: 70px;
+        width: 100%;
+        padding: 10px 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+    }
+
+    .navbar h2,
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 5px 0;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 5px 4px;
+        white-space: nowrap;
+    }
+
+    .quote-btn,
+    .call-btn,
+    .whatsapp-btn {
+        font-size: 13px;
+        padding: 9px 12px;
+        margin: 2px;
+        white-space: nowrap;
+    }
+
+    .poster-section,
+    .poster-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 0 8px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .poster-section img,
+    .poster-container img,
+    .poster {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        box-sizing: border-box;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        CHEEMA <span>TOUR TRAVEL</span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="quote-btn">Get a Quote</a>
+        <a href="tel:+917087505419" class="quote-btn">📞 Call</a>
+
+<a href="https://wa.me/917087505419" target="_blank" class="whatsapp-top">
+    💬 WhatsApp
+</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME / POSTER ================= -->
+
+<main>
+
+<section id="home" class="poster-section">
+
+    <img
+        src="cheema-poster.png"
+        alt="Cheema Tour Travel"
+        class="poster"
+    >
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services" class="services">
+
+    <h2 class="section-title">Our Services</h2>
+
+    <p class="section-subtitle">
+        Reliable travel services for comfortable and memorable journeys.
+    </p>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <div class="service-icon">✈️</div>
+            <h3>Airport Pick & Drop</h3>
+            <p>
+                Comfortable airport pickup and drop services for your journey.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🚗</div>
+            <h3>Local & Outstation</h3>
+            <p>
+                Reliable local and outstation travel services for individuals and families.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏔️</div>
+            <h3>Tour Packages</h3>
+            <p>
+                Customized tour packages for Delhi, Jammu, Srinagar, Himachal and more.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏨</div>
+            <h3>Hotel Booking</h3>
+            <p>
+                Hotel booking assistance for comfortable stays during your trip.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">👨‍👩‍👧‍👦</div>
+            <h3>Family Tours</h3>
+            <p>
+                Comfortable and convenient travel arrangements for families.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🙏</div>
+            <h3>Pilgrimage Tours</h3>
+            <p>
+                Travel arrangements for religious and pilgrimage destinations.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏢</div>
+            <h3>Corporate Travel</h3>
+            <p>
+                Professional transportation solutions for corporate travel.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🧳</div>
+            <h3>One Way & Round Trip</h3>
+            <p>
+                Flexible one-way and round-trip travel options.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PACKAGES ================= -->
+
+<section id="packages">
+
+    <h2 class="section-title">Tour Packages</h2>
+
+    <p class="section-subtitle">
+        Explore popular destinations with Cheema Tour Travel.
+    </p>
+
+    <div class="package-grid">
+
+        <div class="package-card">
+            <div class="package-image">DELHI</div>
+            <div class="package-info">
+                <h3>Delhi Tour</h3>
+                <p>Explore the historical and famous attractions of Delhi.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">JAIPUR</div>
+            <div class="package-info">
+                <h3>Jaipur Tour</h3>
+                <p>Discover the Pink City and its beautiful heritage.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">JAMMU</div>
+            <div class="package-info">
+                <h3>Jammu Tour</h3>
+                <p>Enjoy a comfortable journey through Jammu.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">SRINAGAR</div>
+            <div class="package-info">
+                <h3>Srinagar Tour</h3>
+                <p>Experience the beauty of Kashmir and Srinagar.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">HIMACHAL</div>
+            <div class="package-info">
+                <h3>Himachal Pradesh</h3>
+                <p>Explore the mountains, valleys and scenic destinations.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">BADRINATH</div>
+            <div class="package-info">
+                <h3>Badrinath</h3>
+                <p>Comfortable pilgrimage travel to Badrinath.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">HEM KUNT SAHIB</div>
+            <div class="package-info">
+                <h3>Hem Kunt Sahib</h3>
+                <p>Plan your pilgrimage journey with comfortable travel.</p>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <div class="package-image">CUSTOM</div>
+            <div class="package-info">
+                <h3>Customized Tour</h3>
+                <p>Tell us your destination and we can plan your journey.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FLEET ================= -->
+
+<section id="fleet" class="fleet">
+
+    <h2 class="section-title">Our Fleet</h2>
+
+    <p class="section-subtitle">
+        Travel in comfort and style.
+    </p>
+
+    <div class="fleet-grid">
+
+        <div class="car-card">
+            <div class="car-icon">🚙</div>
+            <h3>Toyota Innova Crysta</h3>
+            <p>Comfortable family and group travel.</p>
+        </div>
+
+        <div class="car-card">
+            <div class="car-icon">🚙</div>
+            <h3>Toyota Rumion</h3>
+            <p>Spacious and comfortable travel.</p>
+        </div>
+
+        <div class="car-card">
+            <div class="car-icon">🚙</div>
+            <h3>Hyundai Exter</h3>
+            <p>Comfortable travel for small groups.</p>
+        </div>
+
+        <div class="car-card">
+            <div class="car-icon">🚙</div>
+            <h3>Hyundai Venue</h3>
+            <p>Comfortable and stylish travel.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OFFERS ================= -->
+
+<section id="offers" class="offers">
+
+    <h2 class="section-title">Special Offer</h2>
+
+    <div class="offer-box">
+
+        <h3>Delhi & Srinagar Tour (BREAKFAST FREE)</h3>
+
+        <p>
+            <NOTE:->
+            Ask us about our latest tour packages and available offers.
+            We provide comfortable travel arrangements for families,pilgrimage groups,outstation trips and corporate travel.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-subtitle">
+        Your Journey, Our Responsibility.
+    </p>
+
+    <div class="contact-box">
+
+        <h3>Cheema Tour Travel</h3>
+
+        <p>
+            Contact us today for tour packages, airport transfers,
+            outstation travel and pilgrimage journeys.
+        </p>
+
+        <p><strong>Mobile:</strong> 7087505419</p>
+        
+        <div class="contact-buttons">
+
+            <a
+                class="btn call-btn"
+                href="tel:+917087505419"
+            >
+                📞 Call Now
+            </a>
+
+            <a
+                class="btn whatsapp-btn"
+                href="https://wa.me/917087505419"
+                target="_blank"
+            >
+                💬 WhatsApp Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>© 2026 Cheema Tour Travel</p>
+
+    <p>Your Journey, Our Responsibility.</p>
+
+</footer>
+
+</body>
+</html>
